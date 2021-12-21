@@ -43,8 +43,8 @@ function place(spot) {
     let list = Object.entries(peeps);
 
     if (spot === 0) {
-        let before = [spot];
-        return before.concat(list)
+        list.splice(0, 0, spot);
+        return list;
     }
     if (spot < list.length) {
         let before = list.slice(0, spot);
@@ -56,8 +56,6 @@ function place(spot) {
         list.push(spot)
         return list;
     }
-
-
 }
 
 for (let i = 0; i < Object.keys(peeps).length + 1; i++) {
